@@ -1,0 +1,16 @@
+class Solution {
+public:
+    long long removeZeros(long long n) {
+        long long x = 0;
+        long long pl = 1;
+        while(n>=1){
+            int rem = n%10;
+            if (rem!=0){
+                x=rem*pl + x;
+                pl*=10;
+            }
+            n/=10;
+        }
+        return x;
+    }
+};
